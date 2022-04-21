@@ -42,6 +42,9 @@ class Redoblante(Platillo): #herencia?
     def __init__(self,sonido_abierto,sonido_cerrado):
         super().__init__(self,sonido_abierto,sonido_cerrado)
 
+class Bombo(Tambor): #herencia?
+    def __init__(self,sonido,nombre,root, x, y):
+        super().__init__(self,sonido)
 
 
 app = tk.Tk()
