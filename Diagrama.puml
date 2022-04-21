@@ -1,0 +1,50 @@
+@startuml
+class Platillo {
+sonido_abierto: sound
+sonido_cerrado: sound
+golpe_abierto()
+golpe_cerrado()
+}
+
+class Platillo {
+}
+class Redoblante {
+}
+
+Platillo <|-- Redoblante
+
+class Tom {
+sonido = sound
+golpe()
+}
+
+class Bombo {
+}
+Tom<|-- Bombo
+
+class Batería {
+Modo: Str
+}
+
+Batería "1" *-- "1..2" Platillo : contiene
+Batería "1" *-- "1..3" Tom : contiene
+Batería "1" *-- "1" Redoblante :contiene
+Batería "1" *-- "1" Bombo : contiene
+
+class App {
+Grabar()
+Importar()
+}
+
+class Grabación{
+duración : Time
+nombre : Str
+formato: Format
+
+reproducir()
+}
+App "1" -- "1..*" Grabación
+App *-- Batería : contiene
+App -- Bateria: Grabar
+(App, Batería) .. Grabación
+@enduml
