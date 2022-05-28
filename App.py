@@ -9,7 +9,6 @@ ps.playsound("HihatA.mp3")
 ps.playsound("HihatA.mp3")
 ps.playsound("HihatA.mp3")
 import tkinter as tk
-from pyparsing import col
 import soundcard as sc
 import soundfile as sf
 
