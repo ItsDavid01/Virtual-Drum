@@ -10,6 +10,7 @@ class Grabacion():
         self.boton = tk.Button(root, text=self.texto, command=self.Grabar, padx=x, pady=y, bg="#428a6e")
         self.playb = tk.Button(root, text="play", command=self.play, padx=x, pady=y, bg="red")
         self.exportb = tk.Button(root, text="export", command=self.export, padx=x, pady=y, bg="blue")
+        self.recordLabel = tk.Label(root, text = "No se esta grabando", height = 10, width = 15)
         self.fs = 44100
         self.root = root
 
@@ -18,6 +19,7 @@ class Grabacion():
         if (answer != None):
             duration = answer  # seconds
             self.record = sd.rec(int(duration * self.fs), samplerate=self.fs, channels=2, device=2)
+            self.recordLabel.config(text = "grabando")
         else:
             messagebox.showwarning("Error","valor de duración no válido, por favor ingrese otro")
 
@@ -26,11 +28,13 @@ class Grabacion():
     def play(self):
         sd.stop()
         sd.play(self.record, self.fs)
+        self.recordLabel.config(text = "grabacion finalizada")
 
     def export(self):
         name = simpledialog.askstring("nombre de la grabación", "Por favor, ingrese el nombre de la grabación: ", parent=self.root)
         if (name != None):
             file = sf.write(f"{name}.wav", self.record, self.fs)
+            self.recordLabel.config(text = "grabacion finalizada")
         else:
             messagebox.showwarning("Error","Nombre de la grabación invalido, por favor intente de nuevo")
         

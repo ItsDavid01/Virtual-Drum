@@ -14,13 +14,6 @@ import soundfile as sf
 
 import record as rd
 
-
-
-
-        
-        
-
-
 class Tambor:
     def __init__(self, sonido, nombre, root, x, y):
         self.sonido = sonido
@@ -31,15 +24,22 @@ class Tambor:
         print("sonido de", self.nombre)
         ps.playsound(self.sonido, block=False)
 
+        
+
+        
+
+
 
 
 app = tk.Tk()
-app.geometry("650x300")
+app.geometry("650x400")
 
 grabar = rd.Grabacion(app,25, 25)
 grabar.boton.grid(row=1, column=2)
 grabar.playb.grid(row=1, column=3)
 grabar.exportb.grid(row=1, column=4)
+grabar.recordLabel.grid(row=2, column=0)
+
 
 Redo = Tambor("redoblante.mp3", "Redoblante", app, 50, 50)
 Redo.boton.grid(row=0, column=2)
@@ -58,9 +58,6 @@ HihatB.boton.grid(row=1, column=1)
 
 HihatA = Tambor("HihatA.mp3", "Hi Hat", app, 25, 25)
 HihatA.boton.grid(row=1, column=1)
-
-
-
 
 
 app.mainloop()
