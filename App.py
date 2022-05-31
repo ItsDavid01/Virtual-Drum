@@ -12,26 +12,12 @@ import tkinter as tk
 import soundcard as sc
 import soundfile as sf
 
+import record as rd
 
 
 
-class Grabacion():
-    def __init__(self, root, x, y) -> None:
-        self.texto = "grabar"
-        self.boton = tk.Button(root, text=self.texto, command=self.Grabar, padx=x, pady=y, bg="#428a6e")
-    def Grabar(self) -> None:
-        print("GRabando")
-        OUTPUT_FILE_NAME = "out.wav"    # file name.
-        SAMPLE_RATE = 48000              # [Hz]. sampling rate.
-        RECORD_SEC = 60                  # [sec]. duration recording audio.
-        with sc.get_microphone(id=str(sc.default_speaker().name), include_loopback=True).recorder(samplerate=SAMPLE_RATE) as mic:
-            # record audio with loopback from default speaker.
-            data = mic.record(numframes=SAMPLE_RATE*RECORD_SEC)
-    
-            # change "data=data[:, 0]" to "data=data", if you would like to write audio as multiple-channels.
-            print("Recorded")
-            sf.write(file=OUTPUT_FILE_NAME, data=data[:, 0], samplerate=SAMPLE_RATE)
-        self.texto = "grabando"
+
+        
         
 
 
@@ -48,10 +34,12 @@ class Tambor:
 
 
 app = tk.Tk()
-app.geometry("450x300")
+app.geometry("650x300")
 
-grabar = Grabacion(app,25, 25)
+grabar = rd.Grabacion(app,25, 25)
 grabar.boton.grid(row=1, column=2)
+grabar.playb.grid(row=1, column=3)
+grabar.exportb.grid(row=1, column=4)
 
 Redo = Tambor("redoblante.mp3", "Redoblante", app, 50, 50)
 Redo.boton.grid(row=0, column=2)
