@@ -47,22 +47,22 @@ grabar.exportb.grid(row=1, column=4)
 grabar.recordLabel.grid(row=2, column=0)
 
 
-Redo = Tambor("redoblante.mp3", "Redoblante", app, 150, 150, "Redoblante.jpg")
+Redo = Tambor("redoblante.mp3", "Redoblante", app, 150, 150, "Redoblante.png")
 Redo.boton.grid(row=0, column=2)
 
-tom1 = Tambor("tom1.mp3", "Tom 1", app, 150, 150, "tom1.jpg")
+tom1 = Tambor("tom1.mp3", "Tom 1", app, 150, 150, "tom1.png")
 tom1.boton.grid(row=0, column=0)
 
-Bombo = Tambor("Bombo.mp3", "Bombo", app, 150, 150, "Bombo.jpg")
+Bombo = Tambor("Bombo.mp3", "Bombo", app, 150, 150, "Bombo.png")
 Bombo.boton.grid(row=1, column=0)
 
-platillo = Tambor("Platillo.mp3", "Platillo", app, 150, 150, "Platillo.jpg")
+platillo = Tambor("Platillo.mp3", "Platillo", app, 150, 150, "Platillo.png")
 platillo.boton.grid(row=0, column=1)
 
-HihatB = Tambor("HihatB.mp3", "", app, 150, 150, "Hihat.jpg")
+HihatB = Tambor("HihatB.mp3", "", app, 150, 150, "Hihat.png")
 HihatB.boton.grid(row=1, column=1)
 
-HihatA = Tambor("HihatA.mp3", "Hi Hat", app, 70, 70, "Hihat.jpg")
+HihatA = Tambor("HihatA.mp3", "Hi Hat", app, 70, 70, "Hihat.png")
 HihatA.boton.grid(row=1, column=1)
 
 
