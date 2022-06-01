@@ -3,11 +3,6 @@ ps.playsound("HihatA.mp3")
 ps.playsound("HihatA.mp3")
 ps.playsound("HihatA.mp3")
 ps.playsound("HihatA.mp3")
-ps.playsound("HihatA.mp3")
-ps.playsound("HihatA.mp3")
-ps.playsound("HihatA.mp3")
-ps.playsound("HihatA.mp3")
-ps.playsound("HihatA.mp3")
 import tkinter as tk
 from PIL import Image
 from PIL import ImageTk
@@ -27,7 +22,7 @@ class Tambor:
         self.boton = tk.Button(root, text=nombre, command=self.golpe, padx=x, pady=y, bg="white", image=self.image, relief =tk.FLAT)
 
     def golpe(self):
-        print("sonido de", self.nombre)
+        print("Sonido de", self.nombre)
         ps.playsound(self.sonido, block=False)
 
         
