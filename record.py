@@ -9,16 +9,16 @@ from PIL import ImageTk
 class Grabacion():
     def __init__(self, root, x, y) -> None:
 
-        self.exportButton = Image.open("ExportButton.jpeg")
+        self.exportButton = Image.open(r"Imagenes\ExportButton.jpeg")
         self.exportButton = self.exportButton.resize((x,y))
         self.exportButton = ImageTk.PhotoImage(self.exportButton)
         
 
-        self.playButton = Image.open("PlayButton.jpg")
+        self.playButton = Image.open(r"Imagenes\PlayButton.jpg")
         self.playButton = self.playButton.resize((x,y))
         self.playButton = ImageTk.PhotoImage(self.playButton)
 
-        self.recButton = Image.open("RecButton.jpg")
+        self.recButton = Image.open(r"Imagenes\RecButton.jpg")
         self.recButton = self.recButton.resize((x,y))
         self.recButton = ImageTk.PhotoImage(self.recButton)
 
