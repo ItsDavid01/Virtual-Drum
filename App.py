@@ -26,12 +26,6 @@ class Tambor:
         ps.playsound(self.sonido, block=False)
 
         
-
-        
-
-
-
-
 app = tk.Tk()
 app.title("Virtual Drum")
 app.geometry("650x400")
